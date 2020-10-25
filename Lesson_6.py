@@ -1,4 +1,4 @@
-#Задание №1
+#Задание №1.1
 class TraficLight:
     def __init__(self):
         color_res = ["Красный", "Жёлтый", "Зелёный"]
