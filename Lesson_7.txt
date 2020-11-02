@@ -1,0 +1,48 @@
+#Задание №1
+class Matrix:
+    import numpy as np
+    print("Вас приветствует программа для удобной работы с большими данными!")
+    def __init__(self,array_1):
+        self.array_1 = array_1
+    
+    def __add__(self,other):
+        return Matrix(self.array_1 + other.array_1)
+    try:
+        def __str__(self):
+            return f"Ваш объект-{self.array_1}"
+    except TypeError:
+        print("Не понимаю почему выдаёт ошибку(")
+                
+num_1 = Matrix(np.arange(1,21).reshape(4,5))
+num_2 = Matrix(np.arange(1,21).reshape(4,5))
+num_1.__str__()
+num_2.__str__()
+print(num_1 + num_2)
+
+#Задание №3
+class Cell:
+    def __init__(self,num):
+        self.num  = int(num)
+        if type(self.num) is not int:
+            print("Введите целочисленное значение!")
+    
+    
+    def __add__(self,other):
+        return f'Ваша сумма составляетs-{self.num + other.num}'
+    
+    def __sub__(self,other):
+        return f'Разность между двумя клетками составляет: {self.num - other.num}'
+    
+    def __mul__(self,other):
+        return f'Произведение ваших клеток составляет: {self.num *other.num}'
+    
+    def __truediv__(self,other):
+        return f'Результат деления ваших клеток: {self.num / other.num}'
+   
+    def make_order(self,columns):
+        k = self.num //columns
+        p = self.num % columns
+        return '\n'.join(['*' * columns    for _ in range(k)]) + '\n' + '*' * p
+        
+    cell = Cell(6)
+cell.make_order(5)
