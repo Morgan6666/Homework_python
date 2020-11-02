@@ -46,3 +46,40 @@ class Cell:
         
     cell = Cell(6)
 cell.make_order(5)
+
+#Задание №2
+from abc import ABC,abstractmethod
+class Cloths(ABC):
+    
+    def __init__(self,name,param):
+        self.name = name
+        self.param = param
+    
+    
+        
+    @property
+    @abstractmethod
+    def summ_1(self,param):
+        pass
+        
+    def __add__(self,other):
+        return self.summ_1 + other.summ_1
+    
+    def __str__(self,name):
+        return f'Расход ткани для {self.name} составляет {summ_1}'
+    
+    
+    
+class Coat(Cloths):
+    @property
+    def summ_1(self,param):
+        return param / (6.5 + 0.5)
+    
+    
+    
+class Suit(Cloths):
+    @property
+    def summ_1(self):
+        return print(2 * self.param + 0.3)
+    
+ 
