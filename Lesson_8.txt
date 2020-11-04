@@ -1,0 +1,190 @@
+#Задание №1
+class Number:
+
+    def __init__(self, day=0, month=0, year=0):
+        self.day = day
+        self.month = month
+        self.year = year
+
+    @classmethod
+    def string_(cls, date_as_string):
+        day, month, year = map(int, date_as_string.split('-'))
+        return cls(day,month,year)
+
+    @staticmethod
+    def valid_(self):
+        return print(self.day <= 31 and self.month <= 12 and self.year <= 3999)
+
+
+#Задание №2
+class MyError(Exception):
+    def __init__(self,mytxt):
+        self.mytxt = mytxt
+while True:       
+    try:
+        a = int(input("Введите значение отличное от 0: "))
+        b = int(input("Введите значение отличное от 0: "))
+        k = a / b
+        if a == 0 or b  == 0:
+            raise MyError("Введите число отличное от 0-ля!")
+        else:
+            print(f'Ваш результат составляет {k:.2f}')
+            break
+    except (ZeroDivisionError,MyError) as err:
+        print(MyError("Введите целое число отличное от 0-ля"))
+    
+
+
+    #Задание №3
+class MyError(Exception):
+    def __init__(self,mytxt):
+        self.mytxt = mytxt
+
+res = []
+k = "Stop"
+while True:
+    try:
+        num = input("Введите число!")
+        if num.isdigit():
+            res.append(num)
+        else:
+            if num == k:
+                print(res)
+                break
+            else:
+                raise MyError("Вы ввели строковое значение!")
+    except MyError as err:
+        print(err)
+        
+        
+
+
+
+#Задание №4
+from abc import ABC, abstractmethod
+class Warehouse(ABC):
+    def __init__(self,name,num_1):
+        self.name = name
+        self.num_1 = num_1
+        
+class Technick(Warehouse):
+    
+    def podr_0(self):
+        if self.name == "Принтер":
+            return Technick.podr_1(self)
+        elif self.name == "Сканер":
+            return Technick.podr_2(self)
+        elif self.name == "Ксерокс":
+            return Technick.podr_3(self)
+    @staticmethod
+    def id_2(self):
+        if len(res_1) >=1 or len(res_1) <= 10:
+            d = dict.fromkeys(self.name,[res_1 + res_2]) #Показывает количество товара на склад
+        for i in d.values():
+                for k in i:
+                    k
+                
+                    break
+        print( f"Ваш аппарат {self.name} находится в количстве равном -{len(k)}-ти ")
+            
+    
+        
+    
+    def podr_1(self):
+        print(f"Ваш {self.name} помещён в подразделение для  {self.name}ов")#Добавляем элементы до переполнения подразделения
+        global res_1
+        res_1 = []
+        while True:
+            i = input("Введите новое число дополнительного товара:")#Переинициализировать в классе
+            if i.isdigit():
+                res_1.append(i)
+                if len(res_1) == 5:
+                    break
+                    print("Количестово мест на складе ограничено!")
+            else:
+                print("Вы ввели строковое значение!")
+        
+        return "Количество мест на складе ограничено!Воспользуйтесь резервным складом!"
+    
+    def res_podr(self):
+        global res_2 
+        res_2 = []
+        while True:
+            k = input(f"Введите дополнительный товар {self.name}!")
+            s = ["Stop","stop"]
+            if k.isdigit():
+                res_2.append(k)
+                if len(res_2) == 10:
+                    print("Резервный склад переполнен!")
+                    break
+            else:
+                if k == s:
+                    break
+                else:
+                    print("Введенно некорректное значение")
+    
+class Printer(Technick):
+    def __init__(self,quali_ty):
+        super().__init__(self,quali_ty)
+        
+   
+    def quality(self):
+        print(f"Какого сосотояния ваш {self.name}?")
+        if self.quali_ty  == "Плохое":
+            print(f"Состояние вашего {self.name} не позволяет его принять на склад!")
+        else:
+            print("Пройдите в отдел prod_1() приёма товара!")
+                  
+    def print_er(self):
+        return print("Я принтер!")
+    @property
+    def count_1(self):
+        pass
+    
+    
+
+    
+class Kserox(Printer):
+    
+    
+    def print_er(self):
+        return print("Я Ксерокс!")
+    
+    @property
+    def count_2(self):
+        print(len(k))
+    
+class Scaner(Kserox):
+    def print_er(self):
+        return print("Я Сканер!")
+    
+    @property
+    def count_3(self):
+        pass
+
+
+
+
+
+
+Задание №7
+class Complex:
+    def __init__(self,R,Im):
+        self.R = R
+        self.Im = Im
+        
+    def __mul__(self,other):
+        global k, k_2, k_3, k_4
+        k = self.R * other.R
+        k_2 = self.Im * other.Im
+        k_3 = self.R * other.Im
+        k_4 = other.R * self.Im
+    
+    def __sub__(self,other):
+        global s_1
+        s_1 = k - k_2
+    
+    def __add__(self,other):
+        a_1 = k_3 + k_4
+        return complex( a_1 + s_1)
+    
